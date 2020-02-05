@@ -10,7 +10,7 @@ const routes = [
 		main: () => <LoginPage />
 	},
 	{
-		path: '/',
+		path: '/dashboard',
 		exact: false,
 		main: () => <HomePage />
 	},
@@ -18,7 +18,7 @@ const routes = [
 		path: '',
 		exact: false,
 		main: () => <ErrorPage />
-	}
+	},
 ];
 
 export default routes;
