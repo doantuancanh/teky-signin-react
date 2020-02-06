@@ -5145,7 +5145,7 @@ body:not(.fixed-topbar) .main-content .page-content {
   color: #ffffff;
 }
 .widget-weather .weather .weather-highlighted .icon-weather {
-  /*background: url(images/icons/weather-main.html) no-repeat;*/
+  background: url(images/icons/weather-main.html) no-repeat;
   float: left;
   height: 57px;
   margin-top: 10px;
@@ -5506,7 +5506,7 @@ body:not(.fixed-topbar) .main-content .page-content {
   margin-bottom: 0;
 }
 .widget-slider-img .slide:before {
-  /*background-image: url('../images/gradient-big.png');*/
+  background-image: url('../images/gradient-big.png');
   background-repeat: repeat-x;
   bottom: 0;
   content: " ";
@@ -5525,7 +5525,7 @@ body:not(.fixed-topbar) .main-content .page-content {
   top: 0;
 }
 .widget-slider-img .text-top .slide:before {
-  /*background-image: url('../images/gradient-big.png');*/
+  background-image: url('../images/gradient-big.png');
   bottom: auto;
   filter: FlipV;
   height: 30px;
@@ -7552,7 +7552,7 @@ body:not(.rtl) .layout-options .img-sidebar-right {
   text-align: center;
 }
 .page-profil .profil-content .item .user:before {
-  /*background-image: url('../images/gradient-big.png');*/
+  background-image: url('../images/gradient-big.png');
   background-repeat: repeat-x;
   bottom: 0;
   content: " ";
