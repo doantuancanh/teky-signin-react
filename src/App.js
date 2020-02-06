@@ -15,7 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
             <Route exact path="/error" name="Error Page" render={props => <ErrorPage {...props}/>} />
-            <Route path="/" name="Home" render={props => <DefaultLayout {...props}
+            <Route path="/" name="Dashboard" render={props => <DefaultLayout {...props}
               authService={this.props.authService}
               signOut={this.props.signOut}/>}
             />
