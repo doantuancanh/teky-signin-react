@@ -5,7 +5,6 @@ export const client = axios.create({
   timeout: 10000,
   headers: {}
 })
-
 client.setAuthToken = (token) => {
   client.defaults.headers['Authorization'] = token
 }

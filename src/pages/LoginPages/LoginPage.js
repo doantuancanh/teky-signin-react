@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import './LoginPage.css';
-import { login } from './../../actions/loginAction';
+import { login, forgotPassword } from './../../actions/loginAction';
 
 class LoginPage extends Component {
     constructor(){
@@ -26,6 +26,11 @@ class LoginPage extends Component {
     onLogin = (e) => {
         this.props.login(this.state.email, this.state.password);
         e.preventDefault();
+    }
+
+    forgotPassword = (e) => {
+        debugger
+        this.props.forgotPassword(this.state.email)
     }
 
     render() {
@@ -78,16 +83,15 @@ class LoginPage extends Component {
                                 Nếu bạn không đăng nhập được hay gọi cho <br/>chúng tôi: +8424 7109 6668
                             </p>
                         </form>
-                        <form className="form-password">
+                        <form className="form-password" onSubmit={ this.forgotPassword } >
                             <h3><strong>Reset</strong> your password</h3>
                             <div className="append-icon m-b-20">
-                                <input type="password" name="password" className="form-control form-white password" placeholder="Password" required />
+                                <input type="text" name="email" className="form-control form-white password" placeholder="Email" required onChange={this.onChange}/>
                                 <i className="icon-lock"></i>
                             </div>
                             <button type="submit" id="submit-password" className="btn btn-lg btn-danger btn-block ladda-button" data-style="expand-left">Send Password Reset Link</button>
                             <div className="clearfix m-t-60">
                                 <p className="pull-left m-t-20 m-b-0"><a id="login">Have an account? Sign In</a></p>
-                                <p className="pull-right m-t-20 m-b-0"><a href="user-signup2.html">New here? Sign up</a></p>
                             </div>
                         </form>
                     </div>
@@ -104,6 +108,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   login: (email, password) => { dispatch(login(email, password)) },
+  forgotPassword: (email) => { dispatch(forgotPassword(email)) },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

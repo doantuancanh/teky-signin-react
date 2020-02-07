@@ -10,6 +10,37 @@ export const signOut = (email, password) => dispatch => {
   })
 }
 
+export const forgotPassword = (email) => dispatch => {
+  dispatch({
+    type: 'LOGIN_STATE_UPDATED',
+    payload: {
+      state: 'waiting'
+    }
+  })
+  return client.post('', {
+      email: email
+    })
+    .then(response => {
+      dispatch({
+        type: 'LOGIN_STATE_UPDATED',
+        payload: {
+          state: 'success'
+        }
+      })
+    })
+    .catch(error => {
+      dispatch({
+        type: 'LOGIN_STATE_UPDATED',
+        payload: {
+          state: 'error',
+          token: null,
+          message: error.message,
+          errors: error.response ? (error.response.errors || []) : []
+        }
+      })
+    })
+}
+
 export const login = (email, password) => dispatch => {
   dispatch({
     type: 'LOGIN_STATE_UPDATED',

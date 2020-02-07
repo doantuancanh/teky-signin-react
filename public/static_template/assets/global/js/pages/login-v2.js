@@ -29,7 +29,7 @@ $(function() {
                 $('.form-signin').slideDown(300);
             });
         });
-        $('#submit-form, #submit-password').click(function(e) {
+        $('#submit-form').click(function(e) {
             e.preventDefault();
             var l = Ladda.create(this);
             l.start();
